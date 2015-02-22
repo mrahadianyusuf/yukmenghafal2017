@@ -1,0 +1,32 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5"
+    android:orientation="vertical">
+    <!-- <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#3D3D3D">
+        
+        <TextView 
+            android:id="@+id/header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" Daftar Surah"
+            android:textColor="#FFFFFF"
+            android:textSize="24pt"/>
+        
+    </RelativeLayout> -->
+    
+	<ListView
+        android:id="@+id/list_view"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_margin="5pt"
+        android:layout_weight="1" 
+        android:dividerHeight="10sp"
+        android:divider="@android:color/transparent">
+    </ListView>
+</LinearLayout>
