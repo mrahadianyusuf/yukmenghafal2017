@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="122dp"
+        android:layout_marginTop="20px"
+        android:layout_weight="0.04"
+        android:layout_marginBottom="20px"
+        android:background="@android:color/white"
+        android:padding="10px" >
+
+        <ImageButton
+            android:id="@+id/foto"
+            android:layout_width="107dp"
+            android:layout_height="113dp"
+            android:layout_marginBottom="10dp"            
+            android:padding="4px"
+            android:scaleType="fitXY"
+            android:src="@drawable/person" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="133dp"
+            android:layout_weight="0.38"
+            android:layout_marginLeft="10px"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/namaText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Muhamad Rahadian"
+                android:layout_marginTop="5px"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/umurPengguna"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="20 Tahun"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:id="@+id/welldone"
+                android:layout_width="110dp"
+                android:layout_height="40dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:padding="4px"
+                android:scaleType="fitXY"
+                android:src="@drawable/welldone" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        
+        android:layout_height="170dp" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:layout_weight="0.38"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@android:color/white"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/totalHafalan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@string/totalHafalan"                
+                android:textSize="15sp" />
+
+            <ImageView
+                android:id="@+id/fotoTotalHafalan"                
+                android:layout_width="50dp"
+                android:layout_height="50dp"                
+                android:padding="4dp"
+                android:gravity="center_horizontal"
+                android:scaleType="fitXY"
+                android:src="@drawable/tothaf" />
+
+            <TextView
+                android:id="@+id/jumlahDiHafal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"                
+                android:text="@string/jumlahdihafal"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:layout_weight="0.38"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@android:color/white"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/sedangDihafal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sedangDihafal"
+                android:gravity="center_horizontal"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:id="@+id/fotoHafalanToday"
+                android:layout_width="50dp"
+                android:layout_height="50dp"                
+                android:padding="4dp"
+                android:scaleType="fitXY"
+                android:gravity="center_horizontal"
+                android:src="@drawable/hafalantoday_blue" />
+
+            <TextView
+                android:id="@+id/hafalanSekarang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hafalankarang"
+                android:gravity="center_horizontal"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:layout_weight="0.38"
+            android:background="@android:color/white"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/hafalanTerakhir"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@string/hafalanTerakhir"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:id="@+id/fotoTotalHafal"
+                android:layout_width="50dp"
+                android:layout_height="50dp"                
+                android:padding="4dp"
+                android:gravity="center_horizontal"
+                android:scaleType="fitXY"
+                android:src="@drawable/totalhafal_blue" />
+
+            <TextView
+                android:id="@+id/lastHafal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@string/hafalanakhir"
+                android:textSize="15sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_weight="0.38"
+        android:background="@android:color/white"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/grafik"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="10dp"
+            android:padding="4dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/grafik" />
+
+    </LinearLayout>
+
+</LinearLayout>

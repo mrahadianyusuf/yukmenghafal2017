@@ -116,11 +116,7 @@ public class MainActivity extends Activity {
 			fragment = new FragmentProfil();			
 			break;
 		case 2:
-			fragment = new FragmentOne();
-			args.putString(DaftarSurat.ITEM_NAME, dataList.get(possition)
-					.getItemName());
-			args.putInt(DaftarSurat.IMAGE_RESOURCE_ID, dataList.get(possition)
-					.getImgResID());
+			fragment = new FragmentStatistik();
 			break;
 		case 3:
 			fragment = new FragmentOne();
