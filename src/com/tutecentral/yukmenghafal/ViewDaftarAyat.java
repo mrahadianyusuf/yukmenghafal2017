@@ -32,7 +32,6 @@ public class ViewDaftarAyat extends Activity {
 		ActionBar actionBar = getActionBar();
 
 		actionBar.setDisplayHomeAsUpEnabled(true);
-		Log.d("cek0", "error0");
 		inisiasi();
 		isiData();
 		
@@ -51,7 +50,6 @@ public class ViewDaftarAyat extends Activity {
 		controllerDS = new ControllerDaftarSurat();
 		idSurat = this.getIntent().getIntExtra("idSurat", -1);
 		listView = (ListView) findViewById(R.id.list_view);
-		Log.d("cek1", "error1");
 	}
 	
 	public void isiData()
@@ -71,14 +69,11 @@ public class ViewDaftarAyat extends Activity {
 				// TODO Auto-generated method stub
 				try {
 					final Ayat ayat = (Ayat) parent.getItemAtPosition(position);					
-					Intent i = new Intent(ViewDaftarAyat.this, ViewAyatFragment.class);
+					Intent i = new Intent(ViewDaftarAyat.this, ViewAyat.class);
 					i.putExtra("idSurat", idSurat);
 					i.putExtra("idAyat", ayat.getId());
 					final int a = 1;
-					Log.d("error", "here");
-					
 					startActivityForResult(i, a);
-					Log.d("error2", "here2");
 				} catch (Exception e) {
 					// TODO: handle exception
 				}

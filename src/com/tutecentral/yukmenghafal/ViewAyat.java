@@ -19,6 +19,7 @@ public class ViewAyat extends FragmentActivity {
 	private ViewPager mPager;
 	
 	private ControllerDaftarSurat controllerDS;
+	private ControllerDaftarAyat controllerDA;
 	static int idSurat;
 	static int idAyat;
 	
@@ -27,19 +28,16 @@ public class ViewAyat extends FragmentActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_view_ayat);
 		
-		
+		inisiasi();
 		mAdapter = new MyAdapter(getSupportFragmentManager());
-		
 		mPager = (ViewPager) findViewById(R.id.pager);
 		mPager.setAdapter(mAdapter);
-		
-		inisiasi();
 		isiData();
 	}
 
 	public void inisiasi()
 	{
-		new ControllerDaftarAyat();
+		controllerDA = new ControllerDaftarAyat();
 		controllerDS = new ControllerDaftarSurat();		
 		idSurat = this.getIntent().getIntExtra("idSurat", -1);
 		idAyat = this.getIntent().getIntExtra("idAyat", -1);
@@ -49,13 +47,10 @@ public class ViewAyat extends FragmentActivity {
 	public void isiData()
 	{
 		/*header.setText(" "+controllerDS.getDaftarSurat().get(idSurat-1).getNamaSurat());*/
-		
-		Log.d("max", Integer.toString(maxAyat));
 		mPager.setCurrentItem(idAyat-1);
 	}
 
 	public static class MyAdapter extends FragmentStatePagerAdapter{
-		
 		public MyAdapter(FragmentManager fragmentManager) {
 			super(fragmentManager);
 		}
@@ -66,21 +61,15 @@ public class ViewAyat extends FragmentActivity {
 			return maxAyat;
 		}
 		
-		
 		@Override
-		public Fragment getItem(int position) {			
-			Fragment fragment = new FragmentAyat();
-			Bundle args = new Bundle();			
-			fragment.setArguments(args);
-			return fragment;
+		public Fragment getItem(int position) {	
+			return FragmentAyat.init(idSurat,position);
 		}
 	}	
 		@Override
 		public boolean onCreateOptionsMenu(Menu menu) {
-			
 			// Inflate the menu; this adds items to the action bar if it is present.
-			getMenuInflater().inflate(R.menu.view_ayat, menu);		
+			getMenuInflater().inflate(R.menu.view_ayat, menu);
 			return true;
 		}
-	
 }
