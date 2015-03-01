@@ -5,6 +5,13 @@
     <string name="action_settings">Settings</string>
     <string name="tentang">YukMenghafal! adalah aplikasi pengingat pengguna untuk tidak makan permen kebanyakan.</string>
     <string name="developer">\n Developer: \n Judsky. \n Raha. \n KakUm.</string>
+    <string name="totalHafalan">Total \n hafalan:</string>
+    <string name="sedangDihafal">Sedang \n dihafal:</string>
+    <string name="hafalanTerakhir">Hafalan \n terakhir:</string>
+    <string name="jumlahdihafal">26 surat dihafal \n dari 36 surat</string>
+    <string name="hafalankarang">An-najmu \n Ayat 17</string>
+    <string name="hafalanakhir">Al-Qomar</string>
+    
     
     <string name="title_activity_view_registrasi">ViewRegistrasi</string>
     <string name="title_activity_view_daftar_surat">ViewDaftarSurat</string>
