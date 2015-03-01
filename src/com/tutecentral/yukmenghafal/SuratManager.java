@@ -25,7 +25,7 @@ public class SuratManager {
 	private String dataDir;
 	private AssetManager assetManager;
 	private Context applicationContext;
-
+	private String[] fileNames;
 	private List<Surat> daftarSurat;
 	private List<Ayat> daftarAyat;
 	private int BUFFER_SIZE = 2048;
@@ -47,61 +47,64 @@ public class SuratManager {
 		this.assetManager = assetManager;
 		this.applicationContext = applicationContext;
 		dataDir = applicationContext.getFilesDir().getAbsolutePath();
-		String fileName = "1.json";
-
-		try
+		fileNames = new String[]{"1.json","2.json","3.json","4.json","5.json",
+				"6.json","7.json","8.json","9.json","10.json"};
+		//String fileName = "1.json";
+		for(int ii = 0;ii<fileNames.length;ii++)
 		{
-			File testJSON = new File(dataDir, fileName);
-			FileOutputStream fos = new FileOutputStream(testJSON.getAbsolutePath());
-			InputStream is = new BufferedInputStream(assetManager.open(fileName));
-			ByteArrayOutputStream buffer =  new ByteArrayOutputStream();
-			
-			int nRead;
-			byte[] data = new byte[BUFFER_SIZE];
-			while ((nRead = is.read(data,0,data.length))!=-1) {
-				buffer.write(data,0,nRead);
-			}
-			buffer.flush();
-			
-			is.close();
-			fos.write(buffer.toByteArray());
-			fos.close();
-		} catch (Exception e)
-		{
-			Log.d("Museum Manager", "ada masalah "+ fileName +" "+e.toString());
-		}
-		
-		daftarSurat = new ArrayList<Surat>();
-		File suratJSON = new File(dataDir);
-		String[] jsonList = suratJSON.list();
-		for (String js : jsonList) {
-			Log.d("Surat Manager", "gan suratManager parsing " + js);
-
-			try {
-				File f = new File(dataDir, js);
-				InputStream is = new BufferedInputStream(new FileInputStream(f));
-				ByteArrayOutputStream buffer = new ByteArrayOutputStream();
-
+			try
+			{
+				File testJSON = new File(dataDir, fileNames[ii]);
+				FileOutputStream fos = new FileOutputStream(testJSON.getAbsolutePath());
+				InputStream is = new BufferedInputStream(assetManager.open(fileNames[ii]));
+				ByteArrayOutputStream buffer =  new ByteArrayOutputStream();
+				
 				int nRead;
 				byte[] data = new byte[BUFFER_SIZE];
-				while ((nRead = is.read(data, 0, data.length)) != -1) {
-					buffer.write(data, 0, nRead);
+				while ((nRead = is.read(data,0,data.length))!=-1) {
+					buffer.write(data,0,nRead);
 				}
 				buffer.flush();
-
-				String json = buffer.toString();
-
-				//Log.d("MuseumManager", "gan content:" + json);
 				
-
-				Surat s = JSONParser.toSurat(json);
-				daftarSurat.add(s);
-
-			} catch (Exception e) {
-				Log.d("MuseumManager", "gan MuseumManager error parsing " + js);
+				is.close();
+				fos.write(buffer.toByteArray());
+				fos.close();
+			} catch (Exception e)
+			{
+				Log.d("Museum Manager", "ada masalah "+ fileNames[ii] +" "+e.toString());
 			}
+			
+			daftarSurat = new ArrayList<Surat>();
+			File suratJSON = new File(dataDir);
+			String[] jsonList = suratJSON.list();
+			for (String js : jsonList) {
+				Log.d("Surat Manager", "gan suratManager parsing " + js);
+
+				try {
+					File f = new File(dataDir, js);
+					InputStream is = new BufferedInputStream(new FileInputStream(f));
+					ByteArrayOutputStream buffer = new ByteArrayOutputStream();
+
+					int nRead;
+					byte[] data = new byte[BUFFER_SIZE];
+					while ((nRead = is.read(data, 0, data.length)) != -1) {
+						buffer.write(data, 0, nRead);
+					}
+					buffer.flush();
+
+					String json = buffer.toString();
+
+					//Log.d("MuseumManager", "gan content:" + json);
+					
+
+					Surat s = JSONParser.toSurat(json);
+					daftarSurat.add(s);
+
+				} catch (Exception e) {
+					Log.d("MuseumManager", "gan MuseumManager error parsing " + js);
+				}
+			}	
 		}
-		
 	}
 	
 	public Context getContext()

@@ -8,15 +8,17 @@ public class Surat {
 	private String artiSurat;
 	private List<Ayat> daftarAyat;
 	private boolean statusBookmark;
+	private boolean statusSelesai;
 	
 	public Surat(int id, String namaSurat, String artiSurat, 
-			List<Ayat> daftarAyat, boolean statusBookmark)
+			List<Ayat> daftarAyat, boolean statusBookmark, boolean statusSelesai)
 	{
 		this.id = id;
 		this.namaSurat = namaSurat;
 		this.artiSurat = artiSurat;
 		this.daftarAyat = daftarAyat;
 		this.statusBookmark = statusBookmark;
+		this.statusSelesai = statusSelesai;
 	}
 	
 	public int getId()
@@ -41,6 +43,11 @@ public class Surat {
 	public boolean getStatusBookmark()
 	{
 		return statusBookmark;
+	}
+	
+	public boolean getStatusSelesai()
+	{
+		return statusSelesai;
 	}
 	
 	public Ayat getAyat(int id)

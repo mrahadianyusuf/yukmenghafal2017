@@ -6,12 +6,13 @@ public class Ayat {
 	private int idSurat;
 	private int id;
 	private boolean statusBookmark;
+	private boolean statusSelesai;
 	private String namaGambarVisual;
 	private String namaGambarAyat;
 	private String terjemahan;
 	
 	public Ayat(int idSurat, int id, String namaGambarVisual, String namaGambarAyat, 
-			String terjemahan, boolean statusBookmark)
+			String terjemahan, boolean statusBookmark, boolean statusSelesai)
 	{
 		this.idSurat = idSurat;
 		this.id = id;
@@ -19,6 +20,7 @@ public class Ayat {
 		this.namaGambarAyat = namaGambarAyat;
 		this.namaGambarVisual = namaGambarVisual;
 		this.terjemahan = terjemahan;
+		this.statusSelesai = statusSelesai;
 	}
 	
 	public int getIdSurat()
@@ -34,6 +36,11 @@ public class Ayat {
 	public boolean getStatusBookmark()
 	{
 		return statusBookmark;
+	}
+	
+	public boolean getStatusSelesai()
+	{
+		return statusSelesai;
 	}
 	
 	public String getNamaGambarAyat()
