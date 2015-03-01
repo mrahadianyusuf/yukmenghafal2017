@@ -51,8 +51,12 @@ public class FragmentAyat extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle saveInstanceState)
 	{
 		View layoutView = inflater.inflate(R.layout.fragment_ayat, parent, false);
-		ImageView gambarAyat = (ImageView) layoutView.findViewById(R.id.fragment_ayatdalam);
-		gambarAyat.setBackgroundDrawable(generateGambar(idSurat, idAyat));
+		ImageView gambarVisualAyat = (ImageView) layoutView.findViewById(R.id.fragment_ayatdalam);
+		gambarVisualAyat.setBackgroundDrawable(generateGambar(idSurat, idAyat));
+		
+		ImageView gambarAyat = (ImageView) layoutView.findViewById(R.id.fragment_ayatarab);
+		gambarAyat.setBackgroundDrawable(generateAyat(idSurat, idAyat));
+		
 		return layoutView;
 	}
 	
@@ -67,5 +71,16 @@ public class FragmentAyat extends Fragment {
 			Log.d("pho", "ada masalah exceptoin "+e.toString());
 		}
 		return null;		
+	}
+	
+	public Drawable generateAyat(int nomorSurat, int nomorAyat)
+	{
+		try {
+			Drawable drawable = getResources().getDrawable(getResources().getIdentifier(da.getDaftarAyat(idSurat).get(idAyat).getNamaGambarAyat(), "drawable", PACKAGE_NAME));
+			return drawable;
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return null;
 	}
 }

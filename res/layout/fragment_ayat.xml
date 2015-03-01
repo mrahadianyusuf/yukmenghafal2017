@@ -24,14 +24,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="3"
-        android:background="#123456">
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/fragment_ayatarab"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/ayat1_1"/>
         
     </LinearLayout>
-    
-    <!--  <TextView
-        android:id="@+id/testtext"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hahai"
-        android:textColor="#FFFFFF"/>-->
 </LinearLayout>

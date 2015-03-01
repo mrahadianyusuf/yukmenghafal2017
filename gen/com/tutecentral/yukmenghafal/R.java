@@ -122,35 +122,36 @@ public final class R {
         public static final int women_pink=0x7f020062;
     }
     public static final class id {
-        public static final int about=0x7f08000a;
-        public static final int action_settings=0x7f08001c;
-        public static final int artiSurat=0x7f08001a;
-        public static final int changeColor=0x7f080010;
+        public static final int about=0x7f08000b;
+        public static final int action_settings=0x7f08001d;
+        public static final int artiSurat=0x7f08001b;
+        public static final int changeColor=0x7f080011;
         public static final int content_frame=0x7f080001;
-        public static final int deskripsi=0x7f08000b;
-        public static final int developer=0x7f08000c;
+        public static final int deskripsi=0x7f08000c;
+        public static final int developer=0x7f08000d;
         public static final int drawer_icon=0x7f080007;
         public static final int drawer_itemName=0x7f080008;
         public static final int drawer_layout=0x7f080000;
-        public static final int foto=0x7f08000f;
-        public static final int frag1_icon=0x7f08000d;
-        public static final int frag1_text=0x7f08000e;
-        public static final int frag2_icon=0x7f080015;
-        public static final int frag2_text=0x7f080016;
+        public static final int foto=0x7f080010;
+        public static final int frag1_icon=0x7f08000e;
+        public static final int frag1_text=0x7f08000f;
+        public static final int frag2_icon=0x7f080016;
+        public static final int frag2_text=0x7f080017;
+        public static final int fragment_ayatarab=0x7f08000a;
         public static final int fragment_ayatdalam=0x7f080009;
         public static final int header=0x7f080003;
         public static final int itemLayout=0x7f080006;
-        public static final int jumlahAyat=0x7f08001b;
+        public static final int jumlahAyat=0x7f08001c;
         public static final int left_drawer=0x7f080002;
         public static final int list_view=0x7f080005;
-        public static final int nama=0x7f080012;
-        public static final int namaAyat=0x7f080018;
-        public static final int namaSurat=0x7f080019;
-        public static final int namaText=0x7f080011;
-        public static final int namaText2=0x7f080013;
-        public static final int nomor=0x7f080017;
+        public static final int nama=0x7f080013;
+        public static final int namaAyat=0x7f080019;
+        public static final int namaSurat=0x7f08001a;
+        public static final int namaText=0x7f080012;
+        public static final int namaText2=0x7f080014;
+        public static final int nomor=0x7f080018;
         public static final int pager=0x7f080004;
-        public static final int umur=0x7f080014;
+        public static final int umur=0x7f080015;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
