@@ -38,10 +38,10 @@ public class ViewDaftarSurat extends Activity {
 		SuratManager.createSuratManager(getAssets(), getApplicationContext());
 		controller = new ControllerDaftarSurat();
 		listView = (ListView) findViewById(R.id.list_view);
-		header = (TextView) findViewById(R.id.header);
+//		header = (TextView) findViewById(R.id.header);
 		
-		Typeface font = Typeface.createFromAsset(this.getAssets(), "fonts/opensans.ttf");
-		header.setTypeface(font);
+//		Typeface font = Typeface.createFromAsset(this.getAssets(), "fonts/opensans.ttf");
+//		header.setTypeface(font);
 		
 	}
 	public void isiData()

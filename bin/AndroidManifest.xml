@@ -9,23 +9,11 @@
         android:targetSdkVersion="17" />
 
     <application
-        android:name="com.orm.SugarApp"
-        android:allowBackup="true"
+        
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
-        <meta-data
-            android:name="DATABASE"
-            android:value="suratManager.db" />
-        <meta-data
-            android:name="VERSION"
-            android:value="1" />
-        <meta-data
-            android:name="QUERY_LOG"
-            android:value="true" />
-        <meta-data
-            android:name="DOMAIN_PACKAGE_NAME"
-            android:value="judin.lat.sugarcontact.tables" />
+        
 
         <activity
             android:name="com.tutecentral.yukmenghafal.MainActivity"
@@ -47,7 +35,7 @@
         <activity
             android:name="com.tutecentral.yukmenghafal.ViewAyat"
             android:label="@string/title_activity_view_ayat"
-            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+             >
         </activity>
  
     </application>
