@@ -14,8 +14,10 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.res.Configuration;
 import android.support.v4.app.ActionBarDrawerToggle;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.view.Menu;
@@ -24,7 +26,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-public class MainActivity extends Activity {
+public class MainActivity extends FragmentActivity {
 
 	private DrawerLayout mDrawerLayout;
 	private ListView mDrawerList;
@@ -117,13 +119,11 @@ public class MainActivity extends Activity {
 			break;
 		case 2:
 			fragment = new FragmentStatistik();
+			
 			break;
 		case 3:
-			fragment = new FragmentOne();
-			args.putString(DaftarSurat.ITEM_NAME, dataList.get(possition)
-					.getItemName());
-			args.putInt(DaftarSurat.IMAGE_RESOURCE_ID, dataList.get(possition)
-					.getImgResID());
+			 fragment = new FragmentAlarmBackup();
+
 			break;
 		case 4:
 			fragment = new FragmentOne();
