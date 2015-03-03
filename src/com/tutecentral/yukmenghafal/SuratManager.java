@@ -151,6 +151,20 @@ public class SuratManager {
 		return daftar;
 	}
 	
+	public void updateDatabase(Surat surat)
+	{
+		try {
+			String fileName = "" + (surat.getId()+1);
+			File suratJSON = new File(dataDir, fileName);
+			FileOutputStream fos = new FileOutputStream(suratJSON.getAbsolutePath());
+			fos.write(JSONParser.toJSON(surat).getBytes());
+			fos.close();
+		} catch (Exception e) {
+			// TODO: handle exception
+			Log.d("Pho","ada masalah "+e.toString());
+		}
+	}
+	
 	public Ayat getAyat(int id)
 	{
 		return null;
