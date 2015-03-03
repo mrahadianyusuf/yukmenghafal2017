@@ -30,7 +30,6 @@ public class ViewDaftarAyat extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_view_daftar_ayat);		
 		ActionBar actionBar = getActionBar();
-
 		actionBar.setDisplayHomeAsUpEnabled(true);
 		inisiasi();
 		isiData();

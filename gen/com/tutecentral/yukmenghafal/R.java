@@ -164,17 +164,25 @@ public final class R {
         public static final int women_pink=0x7f02008c;
     }
     public static final class id {
+<<<<<<< HEAD
         public static final int about=0x7f08000b;
         public static final int action_settings=0x7f08002b;
         public static final int artiSurat=0x7f080029;
         public static final int button1=0x7f08000f;
         public static final int changeColor=0x7f080017;
+=======
+        public static final int about=0x7f08000a;
+        public static final int action_settings=0x7f080028;
+        public static final int artiSurat=0x7f080026;
+        public static final int changeColor=0x7f080010;
+>>>>>>> origin/master
         public static final int content_frame=0x7f080001;
-        public static final int deskripsi=0x7f08000c;
-        public static final int developer=0x7f08000d;
-        public static final int drawer_icon=0x7f080007;
-        public static final int drawer_itemName=0x7f080008;
+        public static final int deskripsi=0x7f08000b;
+        public static final int developer=0x7f08000c;
+        public static final int drawer_icon=0x7f080006;
+        public static final int drawer_itemName=0x7f080007;
         public static final int drawer_layout=0x7f080000;
+<<<<<<< HEAD
         public static final int foto=0x7f080016;
         public static final int fotoHafalanToday=0x7f08001e;
         public static final int fotoTotalHafal=0x7f080021;
@@ -220,6 +228,51 @@ public final class R {
         public static final int fragment_ayat=0x7f030007;
         public static final int fragment_layout_about=0x7f030008;
         public static final int fragment_layout_alarm=0x7f030009;
+=======
+        public static final int foto=0x7f08000f;
+        public static final int fotoHafalanToday=0x7f08001b;
+        public static final int fotoTotalHafal=0x7f08001e;
+        public static final int fotoTotalHafalan=0x7f080018;
+        public static final int frag1_icon=0x7f08000d;
+        public static final int frag1_text=0x7f08000e;
+        public static final int frag2_icon=0x7f080021;
+        public static final int frag2_text=0x7f080022;
+        public static final int fragment_ayatarab=0x7f080009;
+        public static final int fragment_ayatdalam=0x7f080008;
+        public static final int grafik=0x7f080020;
+        public static final int hafalanSekarang=0x7f08001c;
+        public static final int hafalanTerakhir=0x7f08001d;
+        public static final int itemLayout=0x7f080005;
+        public static final int jumlahAyat=0x7f080027;
+        public static final int jumlahDiHafal=0x7f080019;
+        public static final int lastHafal=0x7f08001f;
+        public static final int left_drawer=0x7f080002;
+        public static final int list_view=0x7f080004;
+        public static final int nama=0x7f080012;
+        public static final int namaAyat=0x7f080024;
+        public static final int namaSurat=0x7f080025;
+        public static final int namaText=0x7f080011;
+        public static final int namaText2=0x7f080013;
+        public static final int nomor=0x7f080023;
+        public static final int pager=0x7f080003;
+        public static final int sedangDihafal=0x7f08001a;
+        public static final int totalHafalan=0x7f080017;
+        public static final int umur=0x7f080014;
+        public static final int umurPengguna=0x7f080015;
+        public static final int welldone=0x7f080016;
+    }
+    public static final class layout {
+        public static final int actionbar_custom=0x7f030000;
+        public static final int activity_main=0x7f030001;
+        public static final int activity_view_ayat=0x7f030002;
+        public static final int activity_view_daftar_ayat=0x7f030003;
+        public static final int activity_view_daftar_surat=0x7f030004;
+        public static final int activity_view_registrasi=0x7f030005;
+        public static final int activity_view_splash_screen=0x7f030006;
+        public static final int custom_drawer_item=0x7f030007;
+        public static final int fragment_ayat=0x7f030008;
+        public static final int fragment_layout_about=0x7f030009;
+>>>>>>> origin/master
         public static final int fragment_layout_one=0x7f03000a;
         public static final int fragment_layout_profil=0x7f03000b;
         public static final int fragment_layout_statistik=0x7f03000c;
@@ -228,12 +281,13 @@ public final class R {
         public static final int row_layout_daftar_surat=0x7f03000f;
     }
     public static final class menu {
-        public static final int main=0x7f070000;
-        public static final int view_ayat=0x7f070001;
-        public static final int view_daftar_ayat=0x7f070002;
-        public static final int view_daftar_surat=0x7f070003;
-        public static final int view_registrasi=0x7f070004;
-        public static final int view_splash_screen=0x7f070005;
+        public static final int actionmenu=0x7f070000;
+        public static final int main=0x7f070001;
+        public static final int view_ayat=0x7f070002;
+        public static final int view_daftar_ayat=0x7f070003;
+        public static final int view_daftar_surat=0x7f070004;
+        public static final int view_registrasi=0x7f070005;
+        public static final int view_splash_screen=0x7f070006;
     }
     public static final class string {
         public static final int action_settings=0x7f050001;
