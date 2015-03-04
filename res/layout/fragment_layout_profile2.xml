@@ -22,9 +22,9 @@
 
         <ImageButton
             android:id="@+id/button1"
-            android:layout_height="40dp"            
+            android:layout_height="45dp"            
             android:layout_marginTop="10dp"
-            android:layout_width="100dp"
+            android:layout_width="120px"
             android:scaleType="fitXY"
             android:padding="4px"
             android:background="@android:color/transparent"            
@@ -41,8 +41,8 @@
             android:id="@+id/namaText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="15sp"
-            android:text="Nama" />
+            android:text="Nama"
+            android:textSize="15sp" />
 
         <EditText
             android:id="@+id/nama"
@@ -57,14 +57,24 @@
             android:id="@+id/namaText2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="15sp"
-            android:text="Umur" />
+            android:text="Umur"
+            android:textSize="15sp" />
 
         <EditText
             android:id="@+id/umur"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10" />
+
+        <ImageButton
+            android:id="@+id/button2"
+            android:layout_width="110dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/transparent"
+            android:padding="4px"
+            android:scaleType="fitXY"
+            android:src="@drawable/save" />
 
     </LinearLayout>
 

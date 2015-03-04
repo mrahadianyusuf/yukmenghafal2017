@@ -115,14 +115,19 @@ public class MainActivity extends FragmentActivity {
 			break;
 						
 		case 1:
-			fragment = new FragmentProfil();			
+			fragment = new FragmentProfile();
+			
 			break;
 		case 2:
 			fragment = new FragmentStatistik();
 			
 			break;
 		case 3:
-			 fragment = new FragmentAlarmBackup();
+			fragment = new FragmentOne();
+			args.putString(DaftarSurat.ITEM_NAME, dataList.get(possition)
+					.getItemName());
+			args.putInt(DaftarSurat.IMAGE_RESOURCE_ID, dataList.get(possition)
+					.getImgResID()); 
 
 			break;
 		case 4:

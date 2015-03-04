@@ -6,10 +6,16 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+
+
+
+
 import com.tutecentral.yukmenghafal.R;
 import com.tutecentral.yukmenghafal.R.id;
 import com.tutecentral.yukmenghafal.R.layout;
 import com.tutecentral.yukmenghafal.Utility;
+import com.tutecentral.yukmenghafal.model.Pengguna;
+import com.tutecentral.yukmenghafal.utils.JSONParser;
 
 import android.app.Fragment;
 import android.content.Context;
@@ -29,26 +35,32 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
-public class FragmentAlarmBackup extends Fragment {
+public class FragmentProfile extends Fragment {
 
 	ImageView ivIcon;
 	TextView tvItemName;
+	EditText namaText;
+	EditText umurText;
 	private static Bitmap Image = null;
 	private static Bitmap rotateImage = null;
 	private ImageView imageView;
-	
+	ImageButton save;
 	
 	private static final int GALLERY = 1;
 	private Utility util = new Utility();
 
 	public static final String IMAGE_RESOURCE_ID = "iconResourceID";
 	public static final String ITEM_NAME = "itemName";
-
-	public FragmentAlarmBackup() {
+	private String namaPengguna;
+	private String umurPengguna;
+	private String json;
+	public FragmentProfile() {
 
 	}
 
@@ -56,11 +68,13 @@ public class FragmentAlarmBackup extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 
-		View view = inflater.inflate(R.layout.fragment_layout_alarm, container,
+		View view = inflater.inflate(R.layout.fragment_layout_profile2, container,
 				false);
 		
-		imageView = (ImageView) view.findViewById(R.id.imageView1);		
-		
+		imageView = (ImageView) view.findViewById(R.id.imageView1);
+		namaText = (EditText) view.findViewById(R.id.nama);
+		umurText = (EditText) view.findViewById(R.id.umur);
+		save = (ImageButton) view.findViewById(R.id.button2);
 		Bitmap gettumb = util.getThumbnail("desiredFilename.png", getActivity());
 		imageView.setImageBitmap(gettumb);
 		
@@ -79,7 +93,39 @@ public class FragmentAlarmBackup extends Fragment {
 						Intent.createChooser(intent, "Select Picture"), GALLERY);
 			}
 		});
-
+		
+		namaPengguna = namaText.getText().toString();
+		umurPengguna = umurText.getText().toString();
+		
+			
+		
+		
+		save.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				int id = 1;
+				Pengguna user = new Pengguna(id, namaPengguna, umurPengguna);
+				json = JSONParser.toJSON(user);
+				
+			}
+		});
+		
+		Pengguna newUser = JSONParser.toPengguna(json);
+		
+		
+		Log.d("Phi","ada masalah "+namaPengguna.equals(""));
+		if(namaPengguna.equals("")){
+			namaText.setHint("Nama Anda");
+			umurText.setHint("Umur Anda");
+			
+		}else{
+			namaText.setText(newUser.getName());
+			umurText.setText(newUser.getAge());
+		}
+		
+		
+		
 		return view;
 	}
 
