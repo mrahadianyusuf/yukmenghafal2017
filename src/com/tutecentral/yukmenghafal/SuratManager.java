@@ -155,17 +155,15 @@ public class SuratManager {
 	public int AyatSelesai(int nomorSurat)
 	{
 		List<Ayat> daftar = new ArrayList<Ayat>();
-		
+		int jumlahAyatSelesai = 0;
 		for(Surat a : daftarSurat)
 		{
-			if(a.getId()==nomor)
-			{
-				Log.d("nomor : ", Integer.toString(nomor));
-				List<Ayat>  tmp = a.getDaftarAyat();
-				daftar.addAll(tmp);
+			if(a.getId()==nomorSurat)
+			{				
+				if(a.getStatusSelesai()) jumlahAyatSelesai++;
 			}
 		}
-		return 0;
+		return jumlahAyatSelesai;
 	}
 	public void updateDatabase(Surat surat)
 	{
