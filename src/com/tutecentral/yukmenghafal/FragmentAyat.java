@@ -1,11 +1,9 @@
 package com.tutecentral.yukmenghafal;
 
-import com.tutecentral.yukmenghafal.controller.ControllerDaftarAyat;
-import com.tutecentral.yukmenghafal.controller.ControllerDaftarSurat;
+import com.tutecentral.yukmenghafal.controller.ControllerAyat;
 import com.tutecentral.yukmenghafal.R;
 
 import android.annotation.SuppressLint;
-import android.app.ActionBar;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -14,7 +12,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 
 @SuppressLint("NewApi")
@@ -22,8 +19,7 @@ public class FragmentAyat extends Fragment {
 	int fragVal;
 	private int idSurat;
 	private int idAyat;
-	private ControllerDaftarAyat da;
-	private ControllerDaftarSurat ds;
+	private ControllerAyat controllerAyat;
 	private String PACKAGE_NAME;
 	
 	static FragmentAyat init(int idSurat, int idAyat)
@@ -43,9 +39,7 @@ public class FragmentAyat extends Fragment {
 		super.onCreate(saveInstanceState);
 		idSurat = getArguments() != null ? getArguments().getInt("idSurat"):1;
 		idAyat = getArguments() != null ? getArguments().getInt("idAyat"):1;
-		Log.d("pho", "ada masalah atas "+idSurat+" "+idAyat);
-		da = new ControllerDaftarAyat();
-		ds = new ControllerDaftarSurat();
+		controllerAyat = new ControllerAyat();
 		PACKAGE_NAME = getActivity().getApplicationContext().getPackageName();
 	}
 	
@@ -65,8 +59,7 @@ public class FragmentAyat extends Fragment {
 	public Drawable generateGambar(int nomorSurat, int nomorAyat)
 	{
 		try {
-			Log.d("pho", "ada masalah bawha "+idSurat+" "+idAyat);
-			Drawable drawable = getResources().getDrawable(getResources().getIdentifier(da.getDaftarAyat(idSurat).get(idAyat).getNamaGambarVisual(),"drawable", PACKAGE_NAME));
+			Drawable drawable = getResources().getDrawable(getResources().getIdentifier(controllerAyat.getGambarVisual(nomorSurat, nomorAyat), "drawable", PACKAGE_NAME));
 			return drawable;
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -78,7 +71,7 @@ public class FragmentAyat extends Fragment {
 	public Drawable generateAyat(int nomorSurat, int nomorAyat)
 	{
 		try {
-			Drawable drawable = getResources().getDrawable(getResources().getIdentifier(da.getDaftarAyat(idSurat).get(idAyat).getNamaGambarAyat(), "drawable", PACKAGE_NAME));
+			Drawable drawable = getResources().getDrawable(getResources().getIdentifier(controllerAyat.getGambarAyat(nomorSurat,nomorAyat), "drawable", PACKAGE_NAME));
 			return drawable;
 		} catch (Exception e) {
 			// TODO: handle exception

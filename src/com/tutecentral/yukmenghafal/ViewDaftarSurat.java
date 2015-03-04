@@ -2,8 +2,6 @@ package com.tutecentral.yukmenghafal;
 
 import java.util.List;
 
-
-
 import com.tutecentral.yukmenghafal.controller.ControllerDaftarSurat;
 import com.tutecentral.yukmenghafal.model.Surat;
 import com.tutecentral.yukmenghafal.utils.ArrayAdapterDaftarSurat;
@@ -11,7 +9,7 @@ import com.tutecentral.yukmenghafal.utils.ArrayAdapterDaftarSurat;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Typeface;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
@@ -49,23 +47,26 @@ public class ViewDaftarSurat extends Activity {
 		List<Surat> daftarSurat = controller.getDaftarSurat();
 		adapter = new ArrayAdapterDaftarSurat(this, daftarSurat);
 		listView.setAdapter(adapter);
-		
+		Log.d("Pho","haha atas");
 		listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
 			@Override
 			public void onItemClick(AdapterView<?> parent, final View view, int position,
 					long id) {
 				// TODO Auto-generated method stub
+				Log.d("Pho","haha atas");
 				try {
 					final Surat surat = (Surat) parent.getItemAtPosition(position);
-					
+					Log.d("Pho","haha");
 					Intent i = new Intent(ViewDaftarSurat.this, ViewDaftarAyat.class);
 					i.putExtra("idSurat", surat.getId());
+					i.putExtra("namaSurat", surat.getNamaSurat());
 					final int a = 1;
 					startActivityForResult(i, a);
 					
 				} catch (Exception e) {
 					// TODO: handle exception
+					Log.d("Pho","haha "+e.toString());
 				}
 			}
 		});

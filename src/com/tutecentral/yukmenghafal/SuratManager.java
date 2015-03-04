@@ -16,6 +16,7 @@ import android.util.Log;
 
 import com.orm.SugarRecord;
 import com.tutecentral.yukmenghafal.model.Ayat;
+import com.tutecentral.yukmenghafal.model.Pengguna;
 import com.tutecentral.yukmenghafal.model.Surat;
 import com.tutecentral.yukmenghafal.utils.JSONParser;
 
@@ -151,7 +152,21 @@ public class SuratManager {
 		
 		return daftar;
 	}
-	
+	public int AyatSelesai(int nomorSurat)
+	{
+		List<Ayat> daftar = new ArrayList<Ayat>();
+		
+		for(Surat a : daftarSurat)
+		{
+			if(a.getId()==nomor)
+			{
+				Log.d("nomor : ", Integer.toString(nomor));
+				List<Ayat>  tmp = a.getDaftarAyat();
+				daftar.addAll(tmp);
+			}
+		}
+		return 0;
+	}
 	public void updateDatabase(Surat surat)
 	{
 		try {
@@ -165,7 +180,19 @@ public class SuratManager {
 			Log.d("Pho","ada masalah "+e.toString());
 		}
 	}
-	
+	public void updatePengguna(Pengguna pengguna)
+	{
+		try {
+			String fileName = "" + (pengguna.getName());
+			File suratJSON = new File(dataDir, fileName);
+			FileOutputStream fos = new FileOutputStream(suratJSON.getAbsolutePath());
+			fos.write(JSONParser.toJSON(pengguna).getBytes());
+			fos.close();
+		} catch (Exception e) {
+			// TODO: handle exception
+			Log.d("Pho","ada masalah "+e.toString());
+		}
+	}
 	public Ayat getAyat(int id)
 	{
 		return null;

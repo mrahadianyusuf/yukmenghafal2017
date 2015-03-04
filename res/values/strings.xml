@@ -11,6 +11,8 @@
     <string name="jumlahdihafal">26 surat dihafal \n dari 36 surat</string>
     <string name="hafalankarang">An-najmu \n Ayat 17</string>
     <string name="hafalanakhir">Al-Qomar</string>
+    <string name="bookmark">Bookmark</string>
+    <string name="selesai">Sudah dihafal</string>
     
     
     <string name="title_activity_view_registrasi">ViewRegistrasi</string>

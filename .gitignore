@@ -3,3 +3,11 @@ bin/classes/com/tutecentral/yukmenghafal/ViewDaftarAyat$1.class
 bin/resources.ap_
 bin/resources.ap_
 *.apk
+*.dex
+*.class
+*.class
+bin/classes/com/tutecentral/yukmenghafal/ViewAyat.class
+*.class
+bin/classes/com/tutecentral/yukmenghafal/utils/JSONParser.class
+*.class
+bin/classes/com/tutecentral/yukmenghafal/ViewAyat.class

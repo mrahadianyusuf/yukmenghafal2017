@@ -70,6 +70,7 @@ public class DaftarSurat extends Fragment {
 					Intent i = new Intent(DaftarSurat.this.getActivity(),
 							ViewDaftarAyat.class);
 					i.putExtra("idSurat", surat.getId());
+					i.putExtra("namaSurat",surat.getNamaSurat());
 					final int a = 1;										
 					startActivityForResult(i, a);				
 				} catch (Exception e) {
