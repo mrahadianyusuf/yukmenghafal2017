@@ -164,7 +164,9 @@ public final class R {
     }
     public static final class id {
         public static final int about=0x7f08000a;
-        public static final int action_settings=0x7f080028;
+        public static final int action_bookmark=0x7f080028;
+        public static final int action_love=0x7f080029;
+        public static final int action_settings=0x7f08002a;
         public static final int artiSurat=0x7f080026;
         public static final int changeColor=0x7f080010;
         public static final int content_frame=0x7f080001;
@@ -234,22 +236,24 @@ public final class R {
     }
     public static final class string {
         public static final int action_settings=0x7f050001;
-        public static final int action_websearch=0x7f050010;
+        public static final int action_websearch=0x7f050012;
         public static final int app_name=0x7f050000;
-        public static final int app_not_available=0x7f050011;
+        public static final int app_not_available=0x7f050013;
+        public static final int bookmark=0x7f05000a;
         public static final int developer=0x7f050003;
-        public static final int drawer_close=0x7f05000f;
-        public static final int drawer_open=0x7f05000e;
+        public static final int drawer_close=0x7f050011;
+        public static final int drawer_open=0x7f050010;
         public static final int hafalanTerakhir=0x7f050006;
         public static final int hafalanakhir=0x7f050009;
         public static final int hafalankarang=0x7f050008;
         public static final int jumlahdihafal=0x7f050007;
         public static final int sedangDihafal=0x7f050005;
+        public static final int selesai=0x7f05000b;
         public static final int tentang=0x7f050002;
-        public static final int title_activity_view_ayat=0x7f05000d;
-        public static final int title_activity_view_daftar_ayat=0x7f05000c;
-        public static final int title_activity_view_daftar_surat=0x7f05000b;
-        public static final int title_activity_view_registrasi=0x7f05000a;
+        public static final int title_activity_view_ayat=0x7f05000f;
+        public static final int title_activity_view_daftar_ayat=0x7f05000e;
+        public static final int title_activity_view_daftar_surat=0x7f05000d;
+        public static final int title_activity_view_registrasi=0x7f05000c;
         public static final int totalHafalan=0x7f050004;
     }
     public static final class style {

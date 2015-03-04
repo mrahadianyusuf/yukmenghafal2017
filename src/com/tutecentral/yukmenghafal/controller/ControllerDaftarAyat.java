@@ -19,9 +19,9 @@ public class ControllerDaftarAyat {
 	{
 		return suratManager.getDaftarAyat(nomor);
 	}
-	public boolean cekStatusBookmark(int idAyat)
+	public boolean cekStatusSelesai(int idAyat)
 	{
 		Ayat a = suratManager.getAyat(idAyat);
-		return a.getStatusBookmark();
+		return a.getStatusSelesai();
 	}
 }

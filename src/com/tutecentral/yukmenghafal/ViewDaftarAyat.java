@@ -14,16 +14,15 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import com.tutecentral.yukmenghafal.R;
 import com.tutecentral.yukmenghafal.controller.ControllerDaftarAyat;
-import com.tutecentral.yukmenghafal.controller.ControllerDaftarSurat;
 import com.tutecentral.yukmenghafal.model.Ayat;
 import com.tutecentral.yukmenghafal.utils.ArrayAdapterDaftarAyat;
 
 public class ViewDaftarAyat extends Activity {
 	private ListView listView;
 	private ControllerDaftarAyat controllerDA;
-	private ControllerDaftarSurat controllerDS;
 	private ArrayAdapterDaftarAyat adapter;
 	private int idSurat;
+	private String namaSurat;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState){
@@ -46,8 +45,8 @@ public class ViewDaftarAyat extends Activity {
 	public void inisiasi()
 	{
 		controllerDA = new ControllerDaftarAyat();
-		controllerDS = new ControllerDaftarSurat();
 		idSurat = this.getIntent().getIntExtra("idSurat", -1);
+		namaSurat = this.getIntent().getStringExtra("namaSurat");
 		listView = (ListView) findViewById(R.id.list_view);
 	}
 	
@@ -57,7 +56,7 @@ public class ViewDaftarAyat extends Activity {
 		/*header.setText(" "+controllerDS.getDaftarSurat().get(idSurat-1).getNamaSurat());*/
 		List<Ayat> daftarAyat = controllerDA.getDaftarAyat(idSurat);
 		adapter = new ArrayAdapterDaftarAyat(this, daftarAyat, idSurat);		
-		setTitle(controllerDS.getDaftarSurat().get(idSurat-1).getNamaSurat());
+		setTitle(namaSurat);
 		getActionBar().setIcon(R.drawable.annaas_pink);
 		listView.setAdapter(adapter);		
 		listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -71,6 +70,7 @@ public class ViewDaftarAyat extends Activity {
 					Intent i = new Intent(ViewDaftarAyat.this, ViewAyat.class);
 					i.putExtra("idSurat", idSurat);
 					i.putExtra("idAyat", ayat.getId());
+					i.putExtra("namaSurat",namaSurat);
 					final int a = 1;
 					startActivityForResult(i, a);
 				} catch (Exception e) {
