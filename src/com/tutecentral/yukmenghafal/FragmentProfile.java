@@ -1,5 +1,6 @@
 package com.tutecentral.yukmenghafal;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -9,6 +10,9 @@ import java.io.IOException;
 
 
 
+
+
+import java.io.InputStreamReader;
 
 import com.tutecentral.yukmenghafal.R;
 import com.tutecentral.yukmenghafal.R.id;
@@ -57,9 +61,7 @@ public class FragmentProfile extends Fragment {
 
 	public static final String IMAGE_RESOURCE_ID = "iconResourceID";
 	public static final String ITEM_NAME = "itemName";
-	private String namaPengguna;
-	private String umurPengguna;
-	private String json;
+	private String namaPengguna = "";
 	public FragmentProfile() {
 
 	}
@@ -94,24 +96,24 @@ public class FragmentProfile extends Fragment {
 			}
 		});
 		
-		namaPengguna = namaText.getText().toString();
-		umurPengguna = umurText.getText().toString();
 		
-			
-		
-		
-		save.setOnClickListener(new OnClickListener() {
-			
+		save.setOnClickListener(new OnClickListener(){
+
 			@Override
-			public void onClick(View v) {
-				int id = 1;
-				Pengguna user = new Pengguna(id, namaPengguna, umurPengguna);
-				json = JSONParser.toJSON(user);
+			public void onClick(View arg0) {
+				String nama=namaText.getText().toString();
+				String umur=umurText.getText().toString();
 				
+				FileOutputStream fos;
+				   try {
+				    fos = getActivity().openFileOutput(nama, Context.MODE_PRIVATE);
+				    fos.write(umur.getBytes());
+				    fos.close();				   
+				   } catch (FileNotFoundException e) {e.printStackTrace();}
+				   catch (IOException e) {e.printStackTrace();}				
 			}
+			
 		});
-		
-		Pengguna newUser = JSONParser.toPengguna(json);
 		
 		
 		Log.d("Phi","ada masalah "+namaPengguna.equals(""));
@@ -120,8 +122,26 @@ public class FragmentProfile extends Fragment {
 			umurText.setHint("Umur Anda");
 			
 		}else{
-			namaText.setText(newUser.getName());
-			umurText.setText(newUser.getAge());
+			
+			String name=namaText.getText().toString();
+			String result ="";
+			StringBuffer stringBuffer = new StringBuffer();  
+			try {
+			    BufferedReader inputReader = new BufferedReader(new InputStreamReader(
+			            getActivity().openFileInput(name)));
+			    String inputString;
+			                  
+			    while ((inputString = inputReader.readLine()) != null) {
+			        stringBuffer.append(inputString + "\n");
+			    }
+			    
+			    result = stringBuffer.toString();
+			    
+			} catch (IOException e) {
+			    e.printStackTrace();
+			}
+			namaText.setText(result);
+			umurText.setText(result);
 		}
 		
 		
