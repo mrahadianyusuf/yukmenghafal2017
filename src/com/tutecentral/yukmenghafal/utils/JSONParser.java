@@ -11,6 +11,7 @@ import android.annotation.SuppressLint;
 import android.util.Log;
 
 import com.tutecentral.yukmenghafal.model.Ayat;
+import com.tutecentral.yukmenghafal.model.Pengguna;
 import com.tutecentral.yukmenghafal.model.Surat;
 
 public class JSONParser {
@@ -21,6 +22,8 @@ public class JSONParser {
 	public static final String SURAT_STATUS_SELESAI = "status_selesai";
 	public static final String SURAT_DAFTAR_AYAT = "daftar_ayat";
 	
+	
+	
 	public static final String AYAT_ID_SURAT = "_id_surat";
 	public static final String AYAT_ID = "_id";
 	public static final String AYAT_NAMA_GAMBAR = "nama_gambar";
@@ -28,6 +31,10 @@ public class JSONParser {
 	public static final String AYAT_TERJEMAHAN = "terjemahan"; 	
 	public static final String AYAT_STATUS_BOOKMARK = "status_bookmark";
 	public static final String AYAT_STATUS_SELESAI = "status_selesai";
+	
+	public static final String ID_PENGGUNA = "_id";
+	public static final String NAMA_PENGGUNA = "nama";
+	public static final String UMUR_PENGGUNA = "umur";
 	
 	public static Surat toSurat(String suratJSON)
 	{
@@ -50,6 +57,16 @@ public class JSONParser {
 			Log.d("JSON Parser", "json bermasalah asdio");
 		}
 		return a;
+	}
+	
+	public static Pengguna toPengguna(String penggunaJSON){
+		Pengguna p = null;
+		try{
+			p = toPengguna(new JSONObject(penggunaJSON));
+		} catch(Exception e){
+			Log.d("JSON Parser", "json bermasalah asdio");
+		}
+		return p;
 	}
 	
 	public static Surat toSurat(JSONObject obj) throws JSONException
@@ -83,6 +100,15 @@ public class JSONParser {
 		boolean status_selesai = obj.getBoolean(AYAT_STATUS_SELESAI);
 		Ayat a = new Ayat(idSurat, id, namaGambar, namaAyat, terjemahan, status_bookmark, status_selesai);
 		return a;
+	}
+	
+	public static Pengguna toPengguna(JSONObject obj) throws JSONException
+	{
+		int id = obj.getInt(ID_PENGGUNA);
+		String namaPengguna = obj.getString(NAMA_PENGGUNA);
+		String umurPengguna = obj.getString(UMUR_PENGGUNA);
+		Pengguna p = new Pengguna(id, namaPengguna, umurPengguna);
+		return p;
 	}
 	
 	public static String toJSON(Surat s)
@@ -127,6 +153,21 @@ public class JSONParser {
 			jsonnya = obj.toString();
 		} catch (Exception e) {
 			// TODO: handle exception
+		}
+		return jsonnya;
+	}
+	
+	public static String toJSON(Pengguna p)
+	{
+		String jsonnya = "";
+		try{
+			JSONObject obj = new JSONObject();
+			obj.put(ID_PENGGUNA, p.getID());
+			obj.put(NAMA_PENGGUNA, p.getName());
+			obj.put(UMUR_PENGGUNA, p.getAge());
+			jsonnya = obj.toString();
+		}catch(Exception e){
+			//to handle
 		}
 		return jsonnya;
 	}

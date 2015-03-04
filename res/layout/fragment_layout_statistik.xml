@@ -15,7 +15,7 @@
         android:background="@android:color/white"
         android:padding="10px" >
 
-        <ImageButton
+        <ImageView
             android:id="@+id/foto"
             android:layout_width="107dp"
             android:layout_height="113dp"

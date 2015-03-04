@@ -138,11 +138,12 @@ public class SuratManager {
 	public List<Ayat> getDaftarAyat(int nomor)
 	{
 		List<Ayat> daftar = new ArrayList<Ayat>();
-		
+				
 		for(Surat a : daftarSurat)
 		{
 			if(a.getId()==nomor)
 			{
+				Log.d("nomor : ", Integer.toString(nomor));
 				List<Ayat>  tmp = a.getDaftarAyat();
 				daftar.addAll(tmp);
 			}
