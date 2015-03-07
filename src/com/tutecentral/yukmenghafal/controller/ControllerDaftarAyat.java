@@ -24,4 +24,8 @@ public class ControllerDaftarAyat {
 		Ayat a = suratManager.getAyat(idAyat);
 		return a.getStatusSelesai();
 	}
+	public void ubahSelesai(int nomorSurat)
+	{
+		suratManager.updateDatabase(suratManager.getDaftarSurat().get(nomorSurat));
+	}
 }

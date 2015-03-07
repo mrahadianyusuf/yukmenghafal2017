@@ -152,6 +152,7 @@ public class SuratManager {
 		
 		return daftar;
 	}
+	
 	public int AyatSelesai(int nomorSurat)
 	{
 		List<Ayat> daftar = new ArrayList<Ayat>();
@@ -165,10 +166,12 @@ public class SuratManager {
 		}
 		return jumlahAyatSelesai;
 	}
+	
+	
 	public void updateDatabase(Surat surat)
 	{
 		try {
-			String fileName = "" + (surat.getId()+1);
+			String fileName = "" + (surat.getId());
 			File suratJSON = new File(dataDir, fileName);
 			FileOutputStream fos = new FileOutputStream(suratJSON.getAbsolutePath());
 			fos.write(JSONParser.toJSON(surat).getBytes());

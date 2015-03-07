@@ -3,7 +3,9 @@ package com.tutecentral.yukmenghafal;
 import com.tutecentral.yukmenghafal.controller.ControllerAyat;
 
 import android.app.ActionBar;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.support.v4.app.Fragment;
@@ -21,6 +23,12 @@ public class ViewAyat extends FragmentActivity {
 	private ControllerAyat controllerAyat;
 	static int idSurat;
 	static int idAyat;
+	
+	private boolean status_bookmark;
+	private boolean status_love;
+	
+	private MenuItem menu_bookmark;
+	private MenuItem menu_love;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +50,7 @@ public class ViewAyat extends FragmentActivity {
 	}
 
 	public void inisiasi()
-	{
+	{		
 		controllerAyat = new ControllerAyat();	
 		idSurat = this.getIntent().getIntExtra("idSurat", -1);
 		idAyat = this.getIntent().getIntExtra("idAyat", -1);
@@ -59,35 +67,28 @@ public class ViewAyat extends FragmentActivity {
 	}
 	
 	@Override
+	public void onBackPressed()
+	{
+//		controllerAyat.ubahSelesai(idSurat);
+		Log.d("Pho", "ada masalah backViewAyat");
+		finish();
+	}
+	
+	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
+		/*
+		 * dipindahin ke Fragment, jadi inisiasi ActionBar di Fragment
+		 */
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.view_ayat, menu);
+		//		getMenuInflater().inflate(R.menu.view_ayat, menu);
 		return true;
 	}
 	@Override
     public boolean onPrepareOptionsMenu(Menu menu) {
         // if nav drawer is opened, hide the action items
-//        menu.findItem(R.id.action_settings).setVisible(false);
         return super.onPrepareOptionsMenu(menu);
     }
-
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-	    switch (item.getItemId()) {
-	        case android.R.id.home:
-	            // app icon in action bar clicked; goto parent activity.
-	            this.finish();
-	            return true;
-	        case R.id.action_bookmark:
-	        	return true;
-	        case R.id.action_love:
-	        	
-	        	return true;
-	        default:
-	            return super.onOptionsItemSelected(item);
-	    }
-	}
-
+	
 	public static class MyAdapter extends FragmentStatePagerAdapter{
 		public MyAdapter(FragmentManager fragmentManager) {
 			super(fragmentManager);

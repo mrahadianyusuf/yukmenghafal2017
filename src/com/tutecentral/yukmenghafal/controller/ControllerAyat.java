@@ -1,8 +1,10 @@
 package com.tutecentral.yukmenghafal.controller;
 
 import java.util.List;
+	
 
-import com.tutecentral.yukmenghafal.DaftarSurat;
+import android.util.Log;
+
 import com.tutecentral.yukmenghafal.SuratManager;
 import com.tutecentral.yukmenghafal.model.Ayat;
 import com.tutecentral.yukmenghafal.model.Surat;
@@ -35,6 +37,11 @@ public class ControllerAyat {
 	{
 		Ayat a = suratManager.getAyat(idAyat);
 		return a.getStatusBookmark();
+	}
+	
+	public void ubahSelesai(int nomorSurat)
+	{
+		suratManager.updateDatabase(getDaftarSurat().get(nomorSurat));
 	}
 	
 	public String getGambarVisual(int nomorSurat, int nomorAyat)

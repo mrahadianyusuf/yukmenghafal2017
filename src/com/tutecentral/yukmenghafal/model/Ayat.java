@@ -38,9 +38,19 @@ public class Ayat {
 		return statusBookmark;
 	}
 	
+	public void setStatusBookmark(boolean status_bookmark)
+	{
+		statusBookmark = status_bookmark;
+	}
+	
 	public boolean getStatusSelesai()
 	{
 		return statusSelesai;
+	}
+	
+	public void setStatusSelesai(boolean status_selesai)
+	{
+		statusSelesai = status_selesai;
 	}
 	
 	public String getNamaGambarAyat()

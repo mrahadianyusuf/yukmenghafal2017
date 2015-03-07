@@ -37,11 +37,12 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         
-        <ImageView 
+        <Button 
+            android:id="@+id/button_love_ayat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:src="@drawable/hafal_white"/>
+            android:focusable="false"/>
     </LinearLayout>
 
 </LinearLayout>

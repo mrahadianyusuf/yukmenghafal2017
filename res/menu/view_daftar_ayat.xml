@@ -5,11 +5,4 @@
         android:icon="@drawable/bookmark_white"
         android:showAsAction="always"
         android:title="@string/bookmark"/>
-        
-    <item 
-        android:id="@+id/action_love"
-        android:icon="@drawable/love_white"
-        android:showAsAction="always"
-        android:title="@string/selesai"/>
-
 </menu>

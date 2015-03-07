@@ -13,5 +13,11 @@
         android:icon="@drawable/love_white"
         android:showAsAction="always"
         android:title="@string/selesai"/>
+    
+    <item
+        android:id="@+id/action_share"
+        android:icon="@drawable/share"
+        android:showAsAction="always"
+        android:title="@string/share"/>
 
 </menu>

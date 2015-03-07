@@ -32,9 +32,14 @@ public class ViewDaftarAyat extends Activity {
 		actionBar.setDisplayHomeAsUpEnabled(true);
 		inisiasi();
 		isiData();
-		
 	}
 
+//	@Override
+//	public void onResume()
+//	{
+//		
+//	}
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
@@ -80,17 +85,27 @@ public class ViewDaftarAyat extends Activity {
 			}
 		});
 	}
+
 	
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 	    switch (item.getItemId()) {
 	        case android.R.id.home:
 	            // app icon in action bar clicked; goto parent activity.
+//	        	controllerDA.ubahSelesai(idSurat);
 	            this.finish();
 	            return true;
 	        default:
 	            return super.onOptionsItemSelected(item);
 	    }
+	}
+	
+	@Override
+	public void onBackPressed()
+	{
+//    	controllerDA.ubahSelesai(idSurat);
+		Log.d("Pho", "ada masalah ViewDaftarAyat");
+		finish();
 	}
 }
 
