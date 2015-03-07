@@ -40,7 +40,7 @@
                 android:textSize="17sp" />
 
             <TextView
-                android:id="@+id/umurPengguna"
+                android:id="@+id/umur"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="20 Tahun"
