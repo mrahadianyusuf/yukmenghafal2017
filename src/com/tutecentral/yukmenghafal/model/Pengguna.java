@@ -5,22 +5,40 @@ public class Pengguna {
 	private String age;
 	private int id;
 
+	public Pengguna() {
+    }
+	
 	public Pengguna(int i, String n, String k) {		
-		name = n;
-		age = k;
-		id = i;
+		this.name = n;
+		this.age = k;
+		this.id = i;
 	}	
 
-	public String getName() {
+	public String getNama() {
 		return name;
 	}
 
-	public String getAge() {
+	public String getUmur() {
 		return age;
 	}
 	
 	public int getID(){
 		return id;
 	}
+	
+	public void setNama(String nm) {
+		this.name = nm;
+	}
+
+	public void setUmur(String ag) {
+		this.age = ag;
+	}
+	
+	public void setID(int id){
+		this.id = id;
+	}
+
+	
+	
 
 }

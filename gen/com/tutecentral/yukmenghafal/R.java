@@ -166,17 +166,12 @@ public final class R {
     }
     public static final class id {
         public static final int about=0x7f08000a;
-<<<<<<< HEAD
-        public static final int action_bookmark=0x7f080028;
-        public static final int action_love=0x7f080029;
-        public static final int action_settings=0x7f08002a;
-        public static final int artiSurat=0x7f080026;
-=======
-        public static final int action_settings=0x7f08002b;
+        public static final int action_bookmark=0x7f08002b;
+        public static final int action_love=0x7f08002c;
+        public static final int action_settings=0x7f08002d;
         public static final int artiSurat=0x7f080029;
         public static final int button1=0x7f080016;
         public static final int button2=0x7f080017;
->>>>>>> origin/master
         public static final int changeColor=0x7f080010;
         public static final int content_frame=0x7f080001;
         public static final int deskripsi=0x7f08000b;

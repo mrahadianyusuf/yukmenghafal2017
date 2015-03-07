@@ -7,11 +7,6 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-
-
-
-
-
 import java.io.InputStreamReader;
 
 import com.tutecentral.yukmenghafal.R;
@@ -56,12 +51,14 @@ public class FragmentProfile extends Fragment {
 	private ImageView imageView;
 	ImageButton save;
 	
+
 	private static final int GALLERY = 1;
 	private Utility util = new Utility();
 
 	public static final String IMAGE_RESOURCE_ID = "iconResourceID";
 	public static final String ITEM_NAME = "itemName";
 	private String namaPengguna = "";
+
 	public FragmentProfile() {
 
 	}
@@ -70,16 +67,18 @@ public class FragmentProfile extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 
-		View view = inflater.inflate(R.layout.fragment_layout_profile2, container,
-				false);
-		
+		View view = inflater.inflate(R.layout.fragment_layout_profile2,
+				container, false);
+
 		imageView = (ImageView) view.findViewById(R.id.imageView1);
 		namaText = (EditText) view.findViewById(R.id.nama);
 		umurText = (EditText) view.findViewById(R.id.umur);
 		save = (ImageButton) view.findViewById(R.id.button2);
-		Bitmap gettumb = util.getThumbnail("desiredFilename.png", getActivity());
-		imageView.setImageBitmap(gettumb);
 		
+		Bitmap gettumb = util
+				.getThumbnail("desiredFilename.png", getActivity());
+		imageView.setImageBitmap(gettumb);
+
 		imageView.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -95,58 +94,88 @@ public class FragmentProfile extends Fragment {
 						Intent.createChooser(intent, "Select Picture"), GALLERY);
 			}
 		});
-		
-		
-		save.setOnClickListener(new OnClickListener(){
+
+		save.setOnClickListener(new OnClickListener() {
 
 			@Override
-			public void onClick(View arg0) {
-				String nama=namaText.getText().toString();
-				String umur=umurText.getText().toString();
-				
+			public void onClick(View v) {
+				String nama ="NamaPengguna";
+				String umur = "UmurPengguna";
+				String filename = namaText.getText().toString();
+				String data = umurText.getText().toString();
+
 				FileOutputStream fos;
-				   try {
-				    fos = getActivity().openFileOutput(nama, Context.MODE_PRIVATE);
-				    fos.write(umur.getBytes());
-				    fos.close();				   
-				   } catch (FileNotFoundException e) {e.printStackTrace();}
-				   catch (IOException e) {e.printStackTrace();}				
+				try {
+					fos = getActivity().openFileOutput(nama,
+							Context.MODE_PRIVATE);
+					fos.write(filename.getBytes());
+					
+					fos = getActivity().openFileOutput(umur,
+							Context.MODE_PRIVATE);
+					fos.write(data.getBytes());
+					fos.close();
+
+					Toast.makeText(getActivity().getApplicationContext(),
+							filename + " saved", Toast.LENGTH_LONG).show();
+
+				} catch (FileNotFoundException e) {
+					e.printStackTrace();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+
 			}
-			
 		});
+				
+		String namaAkun = namaText.getText().toString();
 		
-		
-		Log.d("Phi","ada masalah "+namaPengguna.equals(""));
-		if(namaPengguna.equals("")){
+		if(namaAkun == ""){
 			namaText.setHint("Nama Anda");
 			umurText.setHint("Umur Anda");
-			
-		}else{
-			
-			String name=namaText.getText().toString();
-			String result ="";
-			StringBuffer stringBuffer = new StringBuffer();  
-			try {
-			    BufferedReader inputReader = new BufferedReader(new InputStreamReader(
-			            getActivity().openFileInput(name)));
-			    String inputString;
-			                  
-			    while ((inputString = inputReader.readLine()) != null) {
-			        stringBuffer.append(inputString + "\n");
-			    }
-			    
-			    result = stringBuffer.toString();
-			    
-			} catch (IOException e) {
-			    e.printStackTrace();
-			}
-			namaText.setText(result);
-			umurText.setText(result);
+		}else{			
+			namaText.setText(readNama());
+			umurText.setText(readUmur());
 		}
 		
-		
-		
 		return view;
+	}
+
+	public String readUmur() {				
+		String umur = "UmurPengguna";
+		StringBuffer stringBuffer = new StringBuffer();
+		try {
+			BufferedReader inputReader = new BufferedReader(
+					new InputStreamReader(getActivity().openFileInput(umur)));
+			String inputString;
+
+			while ((inputString = inputReader.readLine()) != null) {
+				stringBuffer.append(inputString);
+			}
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		return stringBuffer.toString(); 
+	}
+	
+	public String readNama() {				
+		String nama = "NamaPengguna";
+		StringBuffer stringBuffer = new StringBuffer();
+		try {
+			BufferedReader inputReader = new BufferedReader(
+					new InputStreamReader(getActivity().openFileInput(nama)));
+			String inputString;
+
+			while ((inputString = inputReader.readLine()) != null) {
+				stringBuffer.append(inputString);
+			}
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		return stringBuffer.toString(); 
 	}
 
 	public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -194,5 +223,4 @@ public class FragmentProfile extends Fragment {
 		return cursor.getInt(0);
 	}
 
-	
 }
