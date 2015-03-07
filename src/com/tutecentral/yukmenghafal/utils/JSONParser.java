@@ -163,8 +163,8 @@ public class JSONParser {
 		try{
 			JSONObject obj = new JSONObject();
 			obj.put(ID_PENGGUNA, p.getID());
-			obj.put(NAMA_PENGGUNA, p.getName());
-			obj.put(UMUR_PENGGUNA, p.getAge());
+			obj.put(NAMA_PENGGUNA, p.getNama());
+			obj.put(UMUR_PENGGUNA, p.getUmur());
 			jsonnya = obj.toString();
 		}catch(Exception e){
 			//to handle

@@ -48,6 +48,7 @@
             android:id="@+id/nama"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ,"
             android:ems="10" >
 
             <requestFocus />
@@ -64,6 +65,8 @@
             android:id="@+id/umur"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:digits="0123456789,"
+            android:inputType="number"
             android:ems="10" />
 
         <ImageButton
@@ -75,7 +78,7 @@
             android:padding="4px"
             android:scaleType="fitXY"
             android:src="@drawable/save" />
-
+        
     </LinearLayout>
 
 </LinearLayout>
