@@ -123,11 +123,7 @@ public class MainActivity extends FragmentActivity {
 			
 			break;
 		case 3:
-			fragment = new FragmentOne();
-			args.putString(DaftarSurat.ITEM_NAME, dataList.get(possition)
-					.getItemName());
-			args.putInt(DaftarSurat.IMAGE_RESOURCE_ID, dataList.get(possition)
-					.getImgResID()); 
+			fragment = new FragmentAlarm();			
 
 			break;
 		case 4:

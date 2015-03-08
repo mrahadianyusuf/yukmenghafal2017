@@ -151,11 +151,7 @@ public class SuratManager {
 		
 		return daftar;
 	}
-<<<<<<< HEAD
-	
-=======
 
->>>>>>> origin/master
 	public int AyatSelesai(int nomorSurat)
 	{
 		List<Ayat> daftar = new ArrayList<Ayat>();
@@ -169,12 +165,7 @@ public class SuratManager {
 		}
 		return jumlahAyatSelesai;
 	}
-<<<<<<< HEAD
-	
-	
-=======
 
->>>>>>> origin/master
 	public void updateDatabase(Surat surat)
 	{
 		try {

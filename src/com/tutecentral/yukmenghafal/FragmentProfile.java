@@ -77,7 +77,16 @@ public class FragmentProfile extends Fragment {
 		
 		Bitmap gettumb = util
 				.getThumbnail("desiredFilename.png", getActivity());
-		imageView.setImageBitmap(gettumb);
+		
+		if(imageView.getImageMatrix()==null){
+			String uri = "@drawable/person.png";
+			int imageResource = getResources().getIdentifier(uri, null, getActivity().getPackageName());
+			imageView.setImageResource(imageResource);
+			
+		}else{
+			imageView.setImageBitmap(gettumb);
+		}
+		
 
 		imageView.setOnClickListener(new OnClickListener() {
 

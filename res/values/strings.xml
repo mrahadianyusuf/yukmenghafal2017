@@ -3,8 +3,8 @@
 
     <string name="app_name">Yuk Menghafal</string>
     <string name="action_settings">Settings</string>
-    <string name="tentang">YukMenghafal! adalah aplikasi pengingat pengguna untuk tidak makan permen kebanyakan.</string>
-    <string name="developer">\n Developer: \n Judsky. \n Raha. \n KakUm.</string>
+    <string name="tentang">YukMenghafal! adalah aplikasi yang dapat membantu pengguna untuk menghafalkan ayat-ayat Al-Quran dibantu dengan ilustrasi tiap ayat.</string>
+    <string name="developer">\n Developer: \n Abddullah Izzuddiin A. \n M. Rahadian Yusuf. \n Umroh S.</string>
     <string name="totalHafalan">Total \n hafalan:</string>
     <string name="sedangDihafal">Sedang \n dihafal:</string>
     <string name="hafalanTerakhir">Hafalan \n terakhir:</string>
