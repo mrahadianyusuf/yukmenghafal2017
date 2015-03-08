@@ -6,7 +6,7 @@
     android:layout_marginRight="20dp"
     android:orientation="vertical" >
 
-        <LinearLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20px"
@@ -45,30 +45,43 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:paddingLeft="10px"
-        android:paddingTop="10px"        
-        android:background="@android:color/white"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:background="@android:color/white" >
 
+        <TextView
+            android:id="@+id/dateNow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="22sp"
+            android:text="today"
+            />
 
-                <ImageView
-                    android:id="@+id/ImageView01"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/sounds_pink" />
-
-                <TextView
-                    android:id="@+id/TextView01"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Melody" />            
-        
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"        
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:background="@android:color/white"
-        android:layout_height="wrap_content" >
+        android:paddingLeft="10px"
+        android:paddingTop="10px" >
+
+        <ImageView
+            android:id="@+id/ImageView01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/sounds_pink" />
+
+        <TextView
+            android:id="@+id/TextView01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Melody" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white" >
 
         <CheckBox
             android:id="@+id/checkBox1"
@@ -78,54 +91,57 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"        
-        android:background="@android:color/white"
-        android:layout_height="wrap_content" >
-    <CheckBox
-        android:id="@+id/CheckBox01"
-        android:background="@android:color/white"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Repeat" />
+        android:background="@android:color/white" >
+
+        <CheckBox
+            android:id="@+id/CheckBox01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:text="Repeat" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:background="@android:color/white"
-        android:padding="5dp"
-        android:layout_height="wrap_content" >
-    <TextView
-        android:id="@+id/textView1"
-        android:background="@android:color/white"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Your text:" />
+        android:background="@android:color/white"
+        android:padding="5dp" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:text="Your text:" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:padding="5dp"
+        android:layout_height="wrap_content"
         android:background="@android:color/white"
-        android:layout_height="wrap_content" >
-    <EditText
-        android:id="@+id/editText1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"        
-        android:ems="10"
-        android:inputType="textPersonName" >
+        android:padding="5dp" >
 
-        <requestFocus />
-    </EditText>
+        <EditText
+            android:id="@+id/editText1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName" >
+
+            <requestFocus />
+        </EditText>
     </LinearLayout>
+
     <ImageButton
-            android:id="@+id/button2"
-            android:layout_width="110dp"
-            android:layout_height="35dp"
-            android:layout_marginTop="10dp"
-            android:background="@android:color/transparent"
-            android:padding="4px"
-            android:scaleType="fitXY"
-            android:src="@drawable/save" />
-        
+        android:id="@+id/button2"
+        android:layout_width="110dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="10dp"
+        android:background="@android:color/transparent"
+        android:padding="4px"
+        android:scaleType="fitXY"
+        android:src="@drawable/save" />
 
 </LinearLayout>

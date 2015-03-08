@@ -1,5 +1,8 @@
 package com.tutecentral.yukmenghafal;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import com.tutecentral.yukmenghafal.R;
 import com.tutecentral.yukmenghafal.R.id;
 import com.tutecentral.yukmenghafal.R.layout;
@@ -17,6 +20,7 @@ public class FragmentAlarm extends Fragment {
 
 	ImageView ivIcon;
 	TextView tvItemName;
+	TextView tanggal;
 
 	public static final String IMAGE_RESOURCE_ID = "iconResourceID";
 	public static final String ITEM_NAME = "itemName";
@@ -33,12 +37,17 @@ public class FragmentAlarm extends Fragment {
 				false);
 
 		/*ivIcon = (ImageView) view.findViewById(R.id.frag1_icon);
-		tvItemName = (TextView) view.findViewById(R.id.frag1_text);
+		
 
 		tvItemName.setText(getArguments().getString(ITEM_NAME));
 		ivIcon.setImageDrawable(view.getResources().getDrawable(
 				getArguments().getInt(IMAGE_RESOURCE_ID)));*/
+		SimpleDateFormat sdf = new SimpleDateFormat("EEEE, MMMM d, ''yyy");
+		String currentDateandTime = sdf.format(new Date());
+		
+		tanggal = (TextView) view.findViewById(R.id.dateNow);
 		DigitalClock dc = (DigitalClock) view.findViewById(R.id.digitalClock1);
+		tanggal.setText(currentDateandTime);
 		return view;
 	}
 
