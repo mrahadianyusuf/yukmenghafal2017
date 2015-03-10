@@ -69,6 +69,7 @@ public class FragmentAyat extends Fragment {
 	        	else 
 	        	{
 	        		menu_bookmark.setIcon(R.drawable.bookmark);
+	        		controllerAyat.hapusBookmark();
 	        		status_bookmark = true;
 	        		controllerAyat.getDaftarAyat(idSurat).get(idAyat).setStatusBookmark(status_bookmark);
 	        	}

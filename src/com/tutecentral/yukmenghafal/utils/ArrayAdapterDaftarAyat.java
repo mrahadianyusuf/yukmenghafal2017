@@ -25,14 +25,17 @@ public class ArrayAdapterDaftarAyat extends ArrayAdapter<Ayat>{
 	private String PACKAGE_NAME;
 	private int idSurat;
 	
+	private Button[] arrayButton;
 	private Button button_love;
 	private boolean status_love;
+	
 	public ArrayAdapterDaftarAyat(Context context, List<Ayat> daftarAyat, int idSurat)
 	{
 		super (context, R.layout.row_layout_daftar_ayat, daftarAyat);
 		this.context = context;
 		this.daftarAyat = daftarAyat;
 		this.idSurat = idSurat;
+		arrayButton = new Button[daftarAyat.size()];
 	}
 	
 	@Override
@@ -46,49 +49,43 @@ public class ArrayAdapterDaftarAyat extends ArrayAdapter<Ayat>{
 		View rowView = inflater.inflate(R.layout.row_layout_daftar_ayat, parent, false);
 		status_love = daftarAyat.get(position).getStatusBookmark();
 		button_love = (Button) rowView.findViewById(R.id.button_love_ayat);
-		button_love.setTag(posisi);
+		arrayButton[position] = (Button) rowView.findViewById(R.id.button_love_ayat);
 		setButtonBackround(position);
 		
+		arrayButton[position].setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				if(status_love){
+					Log.d("Pho","ada masalah "+posisi);
+					arrayButton[posisi].setBackgroundResource(R.drawable.hafal_white);
+		    		status_love = false;
+		    		daftarAyat.get(posisi).setStatusSelesai(status_love);
+		    	}
+		    	else 
+		    	{
+		    		arrayButton[posisi].setBackgroundResource(R.drawable.hafal_pink);
+		    		status_love = true;
+		    		daftarAyat.get(posisi).setStatusSelesai(status_love);
+		    	}
+			}
+		});
 		TextView tvNomorAyat = (TextView) rowView.findViewById(R.id.nomor);
 		tvNomorAyat.setText(daftarAyat.get(position).getId()+"");
 		
 		ImageView imgAyat = (ImageView) rowView.findViewById(R.id.namaAyat);
 		imgAyat.setBackgroundDrawable(generateGambar(idSurat, position));
 		
-		button_love.setOnClickListener(new View.OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				if(v.getId()==posisi) {
-					
-				}
-				if(status_love){
-					Log.d("oho","ada masalah "+posisi);
-	        		
-					button_love.setBackgroundResource(R.drawable.hafal_white);
-	        		status_love = false;
-	        		daftarAyat.get(posisi).setStatusSelesai(status_love);
-	        	}
-	        	else 
-	        	{
-	        		button_love.setBackgroundResource(R.drawable.hafal_pink);
-	        		status_love = true;
-	        		daftarAyat.get(posisi).setStatusSelesai(status_love);
-	        	}
-			}
-		});
-		
 		return rowView;
 	}
-	
+
 	public void setButtonBackround(int position)
 	{
 		if(daftarAyat.get(position).getStatusSelesai())
 			button_love.setBackgroundResource(R.drawable.hafal_pink);
 		else 
 			button_love.setBackgroundResource(R.drawable.hafal_white);
-			
 	}
 	
 	public Drawable generateGambar(int nomorSurat, int nomorAyat)

@@ -50,6 +50,11 @@ public class Surat {
 		return statusSelesai;
 	}
 	
+	public void setStatusBookmark(boolean status)
+	{
+		statusBookmark = status;
+	}
+	
 	public Ayat getAyat(int id)
 	{
 		Ayat ret = null;

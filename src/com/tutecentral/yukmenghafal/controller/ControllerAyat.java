@@ -53,4 +53,9 @@ public class ControllerAyat {
 	{
 		return suratManager.getDaftarAyat(nomorSurat).get(nomorAyat).getNamaGambarAyat();
 	}
+	
+	public void hapusBookmark()
+	{
+		suratManager.hapusBookmark();
+	}
 }

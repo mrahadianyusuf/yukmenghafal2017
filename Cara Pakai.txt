@@ -1,0 +1,6 @@
+1. Buka Aplikasi
+2. Pilih Surat yang ingin mulai dihafal
+3. Pilih Ayat yang ingin mulai dihafal
+4. Hafalkan menggunakan ilustrasi yang telah diberikan.
+5. Anda bisa menekan tombol Love jika sudah selesai menghafal dan menekan tombol Bookmark jika ingin menyimpan.
+6. Anda bisa memanfaatkan fitur statistik, alarm, serta profile.

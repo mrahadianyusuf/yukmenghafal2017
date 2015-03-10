@@ -24,6 +24,8 @@ public class ViewDaftarAyat extends Activity {
 	private int idSurat;
 	private String namaSurat;
 	
+	private MenuItem menu_bookmark;
+	private boolean status_bookmark;
 	@Override
 	protected void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
@@ -34,16 +36,12 @@ public class ViewDaftarAyat extends Activity {
 		isiData();
 	}
 
-//	@Override
-//	public void onResume()
-//	{
-//		
-//	}
-	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.view_daftar_ayat, menu);
+		menu_bookmark = menu.findItem(R.id.action_bookmark);
+		iconDefault();
 		return true;
 	}
 	
@@ -53,6 +51,8 @@ public class ViewDaftarAyat extends Activity {
 		idSurat = this.getIntent().getIntExtra("idSurat", -1);
 		namaSurat = this.getIntent().getStringExtra("namaSurat");
 		listView = (ListView) findViewById(R.id.list_view);
+		status_bookmark = controllerDA.getDaftarSurat().get(idSurat).getStatusBookmark();
+		
 	}
 	
 	public void isiData()
@@ -86,6 +86,13 @@ public class ViewDaftarAyat extends Activity {
 		});
 	}
 
+	public void iconDefault()
+	{
+		if(status_bookmark)
+			menu_bookmark.setIcon(R.drawable.bookmark);
+		else 
+			menu_bookmark.setIcon(R.drawable.bookmark_white);
+	}
 	
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
@@ -95,6 +102,21 @@ public class ViewDaftarAyat extends Activity {
 //	        	controllerDA.ubahSelesai(idSurat);
 	            this.finish();
 	            return true;
+	        case R.id.action_bookmark:
+	        	if(status_bookmark){
+	        		menu_bookmark.setIcon(R.drawable.bookmark_white);
+	        		status_bookmark = false;
+	        		controllerDA.getDaftarSurat().get(idSurat).setStatusBookmark(status_bookmark);
+	        		Log.d("Pho","ada masalah "+controllerDA.getDaftarSurat().get(idSurat).getStatusBookmark());
+	        	}
+	        	else 
+	        	{
+	        		menu_bookmark.setIcon(R.drawable.bookmark);
+	        		controllerDA.hapusBookmark();
+	        		status_bookmark = true;
+	        		controllerDA.getDaftarSurat().get(idSurat).setStatusBookmark(status_bookmark);
+	        		Log.d("Pho","ada masalah "+controllerDA.getDaftarSurat().get(idSurat).getStatusBookmark());
+	        	}
 	        default:
 	            return super.onOptionsItemSelected(item);
 	    }

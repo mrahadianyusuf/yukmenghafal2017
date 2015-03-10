@@ -151,7 +151,18 @@ public class SuratManager {
 		
 		return daftar;
 	}
-
+	
+	public void hapusBookmark()
+	{
+		for(int ii = 0; ii< daftarSurat.size();ii++)
+		{
+			for(int jj = 0; jj<daftarSurat.get(ii).getDaftarAyat().size();jj++)
+			{
+				daftarSurat.get(ii).getDaftarAyat().get(jj).setStatusBookmark(false);
+			}
+		}
+	}
+	
 	public int AyatSelesai(int nomorSurat)
 	{
 		List<Ayat> daftar = new ArrayList<Ayat>();

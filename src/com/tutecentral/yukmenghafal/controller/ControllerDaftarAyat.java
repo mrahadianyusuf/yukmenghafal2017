@@ -6,6 +6,7 @@ import android.R.bool;
 
 import com.tutecentral.yukmenghafal.SuratManager;
 import com.tutecentral.yukmenghafal.model.Ayat;
+import com.tutecentral.yukmenghafal.model.Surat;
 
 public class ControllerDaftarAyat {
 	private SuratManager suratManager;
@@ -19,6 +20,13 @@ public class ControllerDaftarAyat {
 	{
 		return suratManager.getDaftarAyat(nomor);
 	}
+	
+	public List<Surat> getDaftarSurat()
+	{
+		
+		return suratManager.getDaftarSurat();
+	}
+	
 	public boolean cekStatusSelesai(int idAyat)
 	{
 		Ayat a = suratManager.getAyat(idAyat);
@@ -27,5 +35,10 @@ public class ControllerDaftarAyat {
 	public void ubahSelesai(int nomorSurat)
 	{
 		suratManager.updateDatabase(suratManager.getDaftarSurat().get(nomorSurat));
+	}
+	
+	public void hapusBookmark()
+	{
+		suratManager.hapusBookmark();
 	}
 }
